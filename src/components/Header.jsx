@@ -24,68 +24,69 @@ const Header = () => {
   
   return (
     <nav>
-              <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+      <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         <a href="/" className="flex items-center">
           <img src={logo} width={50} className="mr-3" alt="infinityLuxLogo" />
-          <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
+          <span className="self-center text-2xl font-semibold whitespace-nowrap">
           </span>
         </a>
         <div className="flex md:order-2">
-        <a href="/contact"></a>
-          {isMobile ? (
-            <button
-              onClick={toggleDropdown}
-              type="button"
-              className="inline-flex items-center p-2 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
-              aria-controls="navbar-cta"
-              aria-expanded={toggleMenu}
-            >
-              {toggleMenu ? <AiOutlineClose /> : <HiMenu />}
-            </button>
-          ) : null}
+          <a href="/contact"></a>
+            {isMobile ? (
+              <button
+                onClick={toggleDropdown}
+                type="button"
+                className="inline-flex items-center p-2 text-sm text-gray-500 rounded-lg md:hidden
+                 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
+                aria-controls="navbar-cta"
+                aria-expanded={toggleMenu}
+                >
+                {toggleMenu ? <AiOutlineClose /> : <HiMenu />}
+              </button>
+            ) : null}
         </div>
         {isMobile && toggleMenu ? (
-          <div
-            className="w-full md:hidden"
-            id="navbar-cta"
-          >
-            <ul className="flex flex-col font-medium p-4 mt-4 border border-gray-100 rounded-lg bg-gray-50 space-y-2 dark:bg-gray-800 dark:border-gray-700">
+
+          <div className="w-full md:hidden">
+            <ul className="navBar-mobile">
               <li>
                 <a href="/home"
-                  className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100"
+                  className="navBar-links"
                 >
                   Home
                 </a>
               </li>
               <li>
                 <a href="/about"
-                  className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100"
+                  className="navBar-links"
                 >
                   About
                 </a>
               </li>
               <li>
                 <a href="/services"
-                  className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100"
+                  className="navBar-links"
                 >
                   Services
                 </a>
               </li>
               <li>
                 <a href="/contact"
-                  className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100"
+                  className="navBar-links"
                 >
                   Contact
                 </a>
               </li>
             </ul>
           </div>
+
         ) : (
           <div className="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-cta">
-            <ul className="flex font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg md:flex-row md:space-x-8 md:mt-0 md:border-0 dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+            <ul className="flex font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg md:flex-row md:space-x-8 
+                          md:mt-0 md:border-0">
               <li>
                 <a href="/home"
-                  className="block py-2 pl-3 pr-4 text-blue-700"
+                  className="navBar-links"
                   aria-current="page"
                 >
                   Home
@@ -93,21 +94,21 @@ const Header = () => {
               </li>
               <li>
                 <a href="/about"
-                  className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100"
+                  className="navBar-links"
                 >
                   About
                 </a>
               </li>
               <li>
                 <a href="/services"
-                  className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100"
+                  className="navBar-links"
                 >
                   Services
                 </a>
               </li>
               <li>
                 <a href="/contact"
-                  className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100"
+                  className="navBar-links"
                 >
                   Contact
                 </a>
@@ -116,7 +117,6 @@ const Header = () => {
           </div>
         )}
       </div>
-
     </nav>
   )
 }

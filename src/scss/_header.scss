@@ -1,0 +1,12 @@
+
+
+
+
+/* Tailwind Styles */
+ .navBar-mobile {
+    @apply flex flex-col font-medium p-4 mt-4 border border-gray-100 rounded-lg bg-gray-50 space-y-2;
+}
+
+.navBar-links {
+    @apply block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100;
+}
