@@ -30,9 +30,9 @@ const Cards = () => {
                 <h1 className='parkNameDetails'>{parkReq.fullName}</h1>
                   <p className='parkDetails'>{parkReq.latLong}</p>
                   <p className='parkDescription'>{parkReq.description}</p>
-                  <span className='parkDetails'>{parkReq.activities && parkReq.activities.length > 0 && (
-                    <div>
-                      <h1>Activities:</h1>
+                   {parkReq.activities && parkReq.activities.length > 0 && (
+                    <div className='parkDetails'>
+                      <h2>Activities:</h2>
                         <ul>
                           {parkReq.activities.slice(0,3).map((activity) => (
                             <li key={activity.id}>{activity.name}</li>
@@ -40,8 +40,8 @@ const Cards = () => {
                         </ul>
                     </div>
                       )}
-                  </span>
-                <p className='parkDetails'>{parkReq.url}</p>
+                  <br/>
+                <p className='parkDetails'>Visit Park Website: <br/> {parkReq.url}</p>
               </div>
           </div>
           ))}
