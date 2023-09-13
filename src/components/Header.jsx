@@ -34,7 +34,8 @@ const Header = () => {
             <button
               onClick={toggleDropdown}
               type="button"
-              className="inline-flex items-center p-2 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
+              className="inline-flex items-center p-2 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none 
+              focus:ring-2 focus:ring-gray-200"
               aria-controls="navbar-cta"
               aria-expanded={toggleMenu}
             >

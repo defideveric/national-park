@@ -25,7 +25,6 @@ const Cards = () => {
                 <img src={parkReq.images[0].url} alt={parkReq.fullName} width={600}
                 className='rounded-t-lg' />
               )}
-              {/* You can render other park details here */}
               <div className='p-5 text-center'>
                 <h1 className='parkNameDetails'>{parkReq.fullName}</h1>
                   <p className='parkDetails'>{parkReq.latLong}</p>

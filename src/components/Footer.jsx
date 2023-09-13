@@ -24,8 +24,8 @@ const Footer = () => {
       <hr className="my-6 border-gray-200 sm:mx-auto lg:my-8" />
 
       <div className="sm:flex sm:items-center sm:justify-between">
-          <span className="text-xs text-gray-500 sm:text-center ml-4 md:ml-2">© 2023 <a href="https://www.nps.gov/index.htm" 
-          className="hover:underline">National Park Services™</a>. All Rights Reserved.
+          <span className="text-xs text-gray-500 sm:text-center ml-4 md:ml-2">
+            © 2023 <a href="https://www.nps.gov/index.htm" className="hover:underline">National Park Services™</a>. All Rights Reserved.
           </span>
           
           <div className="flex mt-4 space-x-5 sm:justify-end sm:mt-0 ml-24">
@@ -50,7 +50,7 @@ const Footer = () => {
                   <span className="sr-only">Dribbble account</span>
               </a>
           </div>
-          </div>
+        </div>
       </div>
   </footer>
 
