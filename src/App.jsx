@@ -1,7 +1,7 @@
 import './scss/main.scss';
 import HomePage from './pages/HomePage';
 
-function App() {
+const App = () =>  {
 
   return (
    <main>
