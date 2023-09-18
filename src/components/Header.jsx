@@ -1,4 +1,4 @@
-import  { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { HiMenu } from 'react-icons/hi';
 import { AiOutlineClose } from 'react-icons/ai';
 import logo from '/src/assets/national_park_logo.png';
@@ -23,9 +23,9 @@ const Header = () => {
   };
 
   return (
-    <header>
+    <header role="banner">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-        <a href="/" className="flex items-center">
+        <a href="/" className="flex items-center" aria-label="Home">
           <img src={logo} width={50} className="mr-3" alt="National Park Logo" />
           <span className="self-center text-xs font-semibold whitespace-nowrap">National Park Services</span>
         </a>
@@ -38,12 +38,13 @@ const Header = () => {
               focus:ring-2 focus:ring-gray-200"
               aria-controls="navbar-cta"
               aria-expanded={toggleMenu}
+              aria-label={toggleMenu ? 'Close Menu' : 'Open Menu'}
             >
               {toggleMenu ? <AiOutlineClose /> : <HiMenu />}
             </button>
           ) : null}
         </div>
-        <div className={`w-full ${isMobile && toggleMenu ? 'md:hidden' : 'hidden'} md:flex md:w-auto md:order-1`} id="navbar-cta">
+        <nav className={`w-full ${isMobile && toggleMenu ? 'md:hidden' : 'hidden'} md:flex md:w-auto md:order-1`} id="navbar-cta" role="navigation">
           <ul className="flex font-medium p-4 md:p-0 sm:mr-40 mt-4 border border-gray-100 rounded-lg md:flex-row md:space-x-8 md:mt-0 md:border-0">
             <li>
               <a href="/home" className="navBar-links" aria-current="page">
@@ -66,7 +67,7 @@ const Header = () => {
               </a>
             </li>
           </ul>
-        </div>
+        </nav>
       </div>
     </header>
   );
