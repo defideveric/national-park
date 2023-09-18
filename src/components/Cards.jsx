@@ -1,6 +1,7 @@
-import  { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 
-const API_URL = import.meta.env.VITE_API_URL
+const API_URL = import.meta.env.VITE_API_URL;
+
 const Cards = () => {
   const [parks, setParks] = useState([]);
 
@@ -17,35 +18,44 @@ const Cards = () => {
   }, []);
 
   return (
-    <main className='parkMain'>
-      <div className='parkContainer'>
+    <section className="parkMain" role="region" aria-label="National Parks">
+      <div className="parkContainer">
         {parks?.map((parkReq) => (
-          <div key={parkReq.id} className='shadow-lg rounded-lg'>
-              {parkReq.images && parkReq.images.length > 0 && (
-                <img src={parkReq.images[0].url} alt={parkReq.fullName} width={600}
-                className='rounded-t-lg' />
+          <article key={parkReq.id} className="parkCard shadow-lg rounded-lg" role="article">
+            {parkReq.images && parkReq.images.length > 0 && (
+              <img
+                src={parkReq.images[0].url}
+                alt={parkReq.fullName}
+                width={600}
+                className="rounded-t-lg"
+              />
+            )}
+            <div className="p-5 text-center">
+              <h2 className="parkNameDetails">{parkReq.fullName}</h2>
+              <p className="parkDetails">{parkReq.latLong}</p>
+              <p className="parkDescription">{parkReq.description}</p>
+              {parkReq.activities && parkReq.activities.length > 0 && (
+                <div className="parkDetails">
+                  <h3>Activities:</h3>
+                  <ul>
+                    {parkReq.activities.slice(0, 3).map((activity) => (
+                      <li key={activity.id}>{activity.name}</li>
+                    ))}
+                  </ul>
+                </div>
               )}
-              <div className='p-5 text-center'>
-                <h1 className='parkNameDetails'>{parkReq.fullName}</h1>
-                  <p className='parkDetails'>{parkReq.latLong}</p>
-                  <p className='parkDescription'>{parkReq.description}</p>
-                   {parkReq.activities && parkReq.activities.length > 0 && (
-                    <div className='parkDetails'>
-                      <h2>Activities:</h2>
-                        <ul>
-                          {parkReq.activities.slice(0,3).map((activity) => (
-                            <li key={activity.id}>{activity.name}</li>
-                          ))}
-                        </ul>
-                    </div>
-                      )}
-                  <br/>
-                <p className='parkDetails'>Visit Park Website: <br/> {parkReq.url}</p>
-              </div>
-          </div>
-          ))}
+              <br />
+              <p className="parkDetails">
+                Visit Park Website: <br />{' '}
+                <a href={parkReq.url} target="_blank" rel="noopener noreferrer">
+                  {parkReq.url}
+                </a>
+              </p>
+            </div>
+          </article>
+        ))}
       </div>
-    </main>
+    </section>
   );
 };
 
